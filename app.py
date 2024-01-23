@@ -6,10 +6,12 @@ st.set_page_config(layout='wide')
 
 @st.cache_resource
 def summary_text(text):
-    summary = Summary()
+    # Specify the model and revision explicitly
+    summary = Summary(model="sshleifer/distilbart-cnn-12-6", revision="a4f8f3e")
     text = (text)
     result = summary(text)
     return result
+
 
 # Extract text from the PDF file using Pypdf2
 def extract_text_from_pdf(file_path):
