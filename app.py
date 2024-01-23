@@ -6,8 +6,7 @@ st.set_page_config(layout='wide')
 
 @st.cache_resource
 def summary_text(text):
-    # Specify the model and revision explicitly
-    summary = Summary(model="sshleifer/distilbart-cnn-12-6", revision="a4f8f3e")
+    summary = Summary()
     text = (text)
     result = summary(text)
     return result
